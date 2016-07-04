@@ -1,5 +1,7 @@
 package by.epam.tc.multiplication_matrix.main;
 
+import java.util.Scanner;
+
 import by.epam.tc.multiplication_matrix.action.MatrixManager;
 import by.epam.tc.multiplication_matrix.action.MultiplicationMatrixThread;
 
@@ -12,7 +14,10 @@ public class TestMultiplication {
 
 		MultiplicationMatrixThread.setSizeResultMatrix(size);
 
-		AmountThread amountThreads = AmountThread.TWO_THREADS;
+		System.out.println("Enter TWO_THREADS or  N_THREADS:");
+		Scanner scanner = new Scanner(System.in);
+		
+		AmountThread amountThreads = AmountThread.valueOf(scanner.nextLine());
 		
 
 		int[][] resultMatrix = null;
@@ -27,6 +32,8 @@ public class TestMultiplication {
 
 		}
 
+		if(resultMatrix == null) return;
+		
 		for (int i = 0; i < size; i++) {
 			for (int j = 0; j < size; j++) {
 				System.out.print(resultMatrix[i][j] + " ");
