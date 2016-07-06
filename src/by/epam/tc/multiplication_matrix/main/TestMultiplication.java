@@ -17,7 +17,7 @@ public class TestMultiplication {
 		System.out.println("Enter TWO_THREADS or  N_THREADS:");
 		Scanner scanner = new Scanner(System.in);
 		
-		AmountThread amountThreads = AmountThread.valueOf(scanner.nextLine());
+		AmountThreadName amountThreads = AmountThreadName.valueOf(scanner.nextLine());
 		
 
 		int[][] resultMatrix = null;
